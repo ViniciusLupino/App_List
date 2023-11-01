@@ -1,0 +1,88 @@
+﻿@model IEnumerable<AppTarefas.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Tarefas";
+}
+
+<h1>Tarefas</h1>
+
+<p>
+    <a asp-action="Create" class="btn add text-white">Adicionar tarefa</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TarefaNome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataFim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TarefaNome)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataInicio)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataFim)
+                    </td>
+
+                    <td style="color:@item.Categoria.CategoriaCor">
+                        @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status.StatusNome)
+                        @if(item.Status.StatusNome.Equals ("Concluído"))
+                        {
+                            <p></p>
+                        }
+                        else
+                        {
+                            <p>Fi</p>
+                        }
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TarefaId" class="btn edit text-white"><svg bootstrap-icon="Pencil" width="16" height="16" class="text-white"></svg></a>
+                    </td>
+
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.TarefaId" class="btn details text-white"><svg bootstrap-icon="InfoCircle" width="16" height="16" class="text-white"></svg></a>
+                    </td>
+
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.TarefaId" class="btn delete text-white"><svg bootstrap-icon="Trash" width="16" height="16" class="text-white"></svg></a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

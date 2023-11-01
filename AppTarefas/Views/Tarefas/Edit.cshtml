@@ -1,0 +1,54 @@
+﻿@model AppTarefas.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar tarefa</h1>
+
+<h4>Tarefa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TarefaId" />
+            <div class="form-group">
+                <label asp-for="TarefaNome" class="control-label mb-2"></label>
+                <input asp-for="TarefaNome" class="form-control" />
+                <span asp-validation-for="TarefaNome" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="DataInicio" class="control-label mb-2"></label>
+                <input asp-for="DataInicio" class="form-control" readonly />
+                <span asp-validation-for="DataInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="DataFim" class="control-label mb-2"></label>
+                <input asp-for="DataFim" class="form-control" />
+                <span asp-validation-for="DataFim" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="CategoriaId" class="control-label mb-2"></label>
+                <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
+                <span asp-validation-for="CategoriaId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="StatusId" class="control-label mb-2"></label>
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Salvar" class="btn save fw-bold text-white" />
+                <a asp-action="Index" class="btn btn-secondary fw-bold text-white">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

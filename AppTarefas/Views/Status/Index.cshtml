@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AppTarefas.Models.Status>
+
+@{
+    ViewData["Title"] = "Status";
+}
+
+<h1>Status</h1>
+
+<p>
+    <a asp-action="Create" class="btn add text-white">Adicionar status</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusNome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusNome)
+                </td>
+                <td >
+                    <a asp-action="Edit" asp-route-id="@item.StatusId" class="btn edit text-white">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.StatusId" class="btn details text-white">Info.</a>
+                    <a asp-action="Delete" asp-route-id="@item.StatusId" class="btn delete text-white">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

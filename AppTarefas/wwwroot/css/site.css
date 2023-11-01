@@ -1,0 +1,80 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: cornsilk;
+}
+
+nav {
+    background-color: cornflowerblue;
+}
+
+footer {
+    background-color: cornflowerblue;
+}
+
+.add {
+    background-color: #006ba0;
+    font-weight: bold;
+}
+
+    .add:hover {
+        background-color: #0483c3;
+        font-weight: bold;
+    }
+
+.edit {
+    background-color: #00a09a;
+    font-weight: bold;
+}
+
+    .edit:hover {
+        background-color: #00c3bb;
+        font-weight: bold;
+    }
+
+.delete {
+    background-color: #fb2525;
+    font-weight: bold;
+}
+
+    .delete:hover {
+        background-color: #ff4c4c;
+        font-weight: bold;
+    }
+
+.details {
+    background-color: #697A7A;
+    font-weight: bold;
+}
+
+    .details:hover {
+        background-color: #8a9595;
+        font-weight: bold;
+    }
+
+.save {
+    background-color: #08b80a;
+}
+
+    .save:hover {
+        background-color: #0aea0d;
+        font-weight: bold;
+    }

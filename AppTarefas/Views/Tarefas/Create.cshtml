@@ -1,0 +1,43 @@
+﻿@model AppTarefas.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Adicionar";
+}
+
+<h1>Adicionar Tarefa</h1>
+
+<h4>Tarefa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TarefaNome" class="control-label mb-2"></label>
+                <input asp-for="TarefaNome" class="form-control mb-3" />
+                <span asp-validation-for="TarefaNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataInicio" class="control-label mb-2"></label>
+                <input asp-for="DataInicio" type="text" value="@DateTime.Now.ToString()" readonly class="form-control mb-3" />
+                <span asp-validation-for="DataInicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CategoriaId" class="control-label mb-2"></label>
+                <select asp-for="CategoriaId" class="form-control mb-3" asp-items="ViewBag.CategoriaId"></select>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Adicionar" class="btn add text-white" />
+                <a asp-action="Index" class="btn btn-secondary fw-bold">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
