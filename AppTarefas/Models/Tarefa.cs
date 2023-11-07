@@ -5,7 +5,6 @@ namespace AppTarefas.Models
     public class Tarefa
     {
         public Guid TarefaId { get; set; }
-
         [DisplayName("Tarefa")]
         public string TarefaNome { get; set; }
         [DisplayName("Data inical")]

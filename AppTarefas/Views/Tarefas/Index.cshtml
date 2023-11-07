@@ -10,6 +10,11 @@
     <a asp-action="Create" class="btn add text-white">Adicionar tarefa</a>
 </p>
 
+<form class="d-flex" role="search">
+    <input name="inFiltro" class="form-control me-2" type="search" arial-label="search" />
+    <button class="btn btn-outline-success" asp-controller="Tarefas" asp-action="Filter"></button>
+</form>
+
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -55,16 +60,8 @@
                         @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
                     </td>
 
-                    <td>
+                    <td class="status">
                         @Html.DisplayFor(modelItem => item.Status.StatusNome)
-                        @if(item.Status.StatusNome.Equals ("Concluído"))
-                        {
-                            <p></p>
-                        }
-                        else
-                        {
-                            <p>Fi</p>
-                        }
                     </td>
 
                     <td>
@@ -86,3 +83,35 @@
     </table>
 </div>
 
+<style>
+
+    .Coisa {
+        background-color: Red;
+    }
+
+</style>
+
+
+<script>
+    var linhas = document.getElementsByClassName('status');
+    for (var i = 0; i < linhas.length; i++) {
+        if (linhas[i].innerHTML.trim() === 'Concluído') {
+            linhas[i].classList.add('bg-success');
+            linhas[i].classList.add('fw-bold');
+            linhas[i].classList.add('text-white');
+        }
+
+        else {
+            if (linhas[i].innerHTML.trim() === 'Fazendo') {
+                linhas[i].classList.add('bg-warning');
+                linhas[i].classList.add('fw-bold');
+            }
+
+            else {
+                linhas[i].classList.add('bg-danger')
+                linhas[i].classList.add('fw-bold');
+                linhas[i].classList.add('text-white');
+            }
+        }
+    }
+</script>

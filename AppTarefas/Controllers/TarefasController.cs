@@ -19,6 +19,14 @@ namespace AppTarefas.Controllers
             _context = context;
         }
 
+        /*
+        public IActionResult Filter (string inFiltro)
+        {
+            List<Tarefa> tarefa = _context.Filter(inFiltro);
+            return View("Index", tarefa);
+        }
+        */
+
         // GET: Tarefas
         public async Task<IActionResult> Index()
         {

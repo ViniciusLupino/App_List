@@ -189,6 +189,26 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\CheckList.jpg",
+      "PackagePath": "staticwebassets\\img\\CheckList.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\CheckListManual.jpg",
+      "PackagePath": "staticwebassets\\img\\CheckListManual.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\CheckListManual2.jpg",
+      "PackagePath": "staticwebassets\\img\\CheckListManual2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\GPT.jpg",
+      "PackagePath": "staticwebassets\\img\\GPT.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\Gil_Goiaba.jpg",
+      "PackagePath": "staticwebassets\\img\\Gil_Goiaba.jpg"
+    },
+    {
       "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\Logo-app-tarefas.png",
       "PackagePath": "staticwebassets\\img\\Logo-app-tarefas.png"
     },
