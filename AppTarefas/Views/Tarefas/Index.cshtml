@@ -10,10 +10,15 @@
     <a asp-action="Create" class="btn add text-white">Adicionar tarefa</a>
 </p>
 
-<form class="d-flex" role="search">
-    <input name="inFiltro" class="form-control me-2" type="search" arial-label="search" />
-    <button class="btn btn-outline-success" asp-controller="Tarefas" asp-action="Filter"></button>
-</form>
+<div>
+    @using (Html.BeginForm("Index", "Tarefas", FormMethod.Get))
+    {
+        <div class="input-group mb-3">
+            <input type="text" name="categoriaCor" class="form-control" placeholder="Digite a tarefa">
+            <button class="btn btn-secondary"><svg bootstrap-icon="Search" width="18" height="18" aria-label="Pesquisar" class="text-white"></svg></button>
+        </div>
+    }
+</div>
 
 <div class="table-responsive">
     <table class="table">
@@ -56,7 +61,7 @@
                         @Html.DisplayFor(modelItem => item.DataFim)
                     </td>
 
-                    <td style="color:@item.Categoria.CategoriaCor">
+                    <td style="background-color:@item.Categoria.CategoriaCor" class="fw-bold text-dark">
                         @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
                     </td>
 
@@ -83,13 +88,6 @@
     </table>
 </div>
 
-<style>
-
-    .Coisa {
-        background-color: Red;
-    }
-
-</style>
 
 
 <script>

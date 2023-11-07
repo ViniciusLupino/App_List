@@ -19,19 +19,18 @@ namespace AppTarefas.Controllers
             _context = context;
         }
 
-        /*
-        public IActionResult Filter (string inFiltro)
-        {
-            List<Tarefa> tarefa = _context.Filter(inFiltro);
-            return View("Index", tarefa);
-        }
-        */
 
-        // GET: Tarefas
-        public async Task<IActionResult> Index()
+        // GET: Tarefas  var appTarefasDbContext = _context.Tarefas.Include(t => t.Categoria).Include(t => t.Status); return View(await appTarefasDbContext.ToListAsync());
+
+        public async Task<IActionResult> Index(string categoriaCor)
         {
-            var appTarefasDbContext = _context.Tarefas.Include(t => t.Categoria).Include(t => t.Status);
-            return View(await appTarefasDbContext.ToListAsync());
+            var tarefas = from t in _context.Tarefas.Include(t => t.Categoria).Include(t => t.Status) select t;
+            if (!String.IsNullOrEmpty(categoriaCor))
+            {
+                tarefas = tarefas.Where(t => t.Categoria.CategoriaNome.Contains(categoriaCor));
+            }
+
+            return View(await tarefas.ToListAsync());
         }
 
         // GET: Tarefas/Details/5
@@ -171,14 +170,14 @@ namespace AppTarefas.Controllers
             {
                 _context.Tarefas.Remove(tarefa);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TarefaExists(Guid id)
         {
-          return (_context.Tarefas?.Any(e => e.TarefaId == id)).GetValueOrDefault();
+            return (_context.Tarefas?.Any(e => e.TarefaId == id)).GetValueOrDefault();
         }
     }
 }

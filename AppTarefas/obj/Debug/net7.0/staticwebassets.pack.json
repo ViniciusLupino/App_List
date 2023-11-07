@@ -213,6 +213,10 @@
       "PackagePath": "staticwebassets\\img\\Logo-app-tarefas.png"
     },
     {
+      "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\img\\Luan_Melancia.jpg",
+      "PackagePath": "staticwebassets\\img\\Luan_Melancia.jpg"
+    },
+    {
       "Id": "C:\\Users\\Aluno\\Downloads\\AppTarefas\\AppTarefas\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

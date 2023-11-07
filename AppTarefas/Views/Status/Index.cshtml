@@ -16,6 +16,8 @@
                 @Html.DisplayNameFor(model => model.StatusNome)
             </th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -25,10 +27,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.StatusNome)
                 </td>
-                <td >
-                    <a asp-action="Edit" asp-route-id="@item.StatusId" class="btn edit text-white">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.StatusId" class="btn details text-white">Info.</a>
-                    <a asp-action="Delete" asp-route-id="@item.StatusId" class="btn delete text-white">Apagar</a>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.StatusId" class="btn edit text-white"><svg bootstrap-icon="Pencil" width="16" height="16" class="text-white"></svg></a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.StatusId" class="btn details text-white"><svg bootstrap-icon="InfoCircle" width="16" height="16" class="text-white"></svg></a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.StatusId" class="btn delete text-white"><svg bootstrap-icon="Trash" width="16" height="16" class="text-white"></svg></a>
                 </td>
             </tr>
         }

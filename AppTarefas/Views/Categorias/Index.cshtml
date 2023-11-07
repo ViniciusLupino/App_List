@@ -10,35 +10,42 @@
     <a asp-action="Create" class="btn add text-white">Adicionar categoria</a>
 </p>
 <div class="table-responsive-sm">
-<table class="table ">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoriaNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoriaCor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody class="table-group-divider">
-        @foreach (var item in Model)
-        {
+    <table class="table ">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoriaNome)
-                </td>
-                <td>   
-                    @Html.DisplayFor(modelItem => item.CategoriaCor)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.CategoriaId" class="btn edit text-white">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.CategoriaId" class="btn details text-white">Info.</a>
-                    <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="btn delete text-white">Apagar</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoriaNome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoriaCor)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoriaNome)
+                    </td>
+                    <td style="background-color:@item.CategoriaCor" class="fw-bold text-dark">
+                        @Html.DisplayFor(modelItem => item.CategoriaCor)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CategoriaId" class="btn edit text-white"><svg bootstrap-icon="Pencil" width="16" height="16" class="text-white"></svg></a>
+
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.CategoriaId" class="btn details text-white"><svg bootstrap-icon="InfoCircle" width="16" height="16" class="text-white"></svg></a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="btn delete text-white"><svg bootstrap-icon="Trash" width="16" height="16" class="text-white"></svg></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
